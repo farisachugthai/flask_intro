@@ -4,10 +4,10 @@
 import logging
 
 import pytest
+from webtest import TestApp
 
 from flask_intro.app import create_app
 from flask_intro.database import db as _db
-from webtest import TestApp
 
 from .factories import UserFactory
 

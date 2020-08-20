@@ -4,7 +4,13 @@ import datetime as dt
 
 from flask_login import UserMixin
 
-from flask_intro.database import Column, PkModel, db, reference_col, relationship
+from flask_intro.database import (
+    Column,
+    PkModel,
+    db,
+    reference_col,
+    relationship,
+)
 from flask_intro.extensions import bcrypt
 
 

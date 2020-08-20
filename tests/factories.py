@@ -2,6 +2,7 @@
 """Factories to help in tests."""
 from factory import PostGenerationMethodCall, Sequence
 from factory.alchemy import SQLAlchemyModelFactory
+
 from flask_intro.database import db
 from flask_intro.user.models import User
 
