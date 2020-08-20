@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Set up the repo as python packages."""
 import codecs
 import os
 import sys

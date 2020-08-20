@@ -42,7 +42,7 @@ class Model(CRUDMixin, db.Model):
     __abstract__ = True
 
 class PkModel(Model):
-    """Base model class that includes CRUD convenience methods, plus adds a 'primary key' column named ``id``"""
+    """Base model class that includes CRUD convenience methods, plus adds a 'primary key' column named ``id``."""
 
     __abstract__ = True
     id = Column(db.Integer, primary_key=True)
@@ -64,10 +64,11 @@ def reference_col(
 ):
     """Column that adds primary key foreign key reference.
 
-    Usage: ::
+    Usage::
 
         category_id = reference_col('category')
         category = relationship('Category', backref='categories')
+
     """
     foreign_key_kwargs = foreign_key_kwargs or {}
     column_kwargs = column_kwargs or {}
