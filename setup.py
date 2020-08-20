@@ -3,12 +3,12 @@ import codecs
 import os
 import sys
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
-NAME="flask_intro"
+NAME = "flask_intro"
 AUTHOR = "Faris Chugthai"
 EMAIL = "farischugthai@gmail.com"
-DESCRIPTION="flask_intro"
+DESCRIPTION = "flask_intro"
 
 ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
 README = os.path.join(ROOT_PATH, "", "README.md")

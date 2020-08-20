@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, redirect, render_template, request, url_for
 
 # create the application object
 app = Flask(__name__)
@@ -25,6 +25,7 @@ def login():
         else:
             return redirect(url_for('home'))
     return render_template('login.html', error=error)
+
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
