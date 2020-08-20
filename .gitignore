@@ -1,4 +1,16 @@
+# Installing
+flask_intro.egg-info
+build
+dist
 .venv/**
+node_modules
+
+# Running
+__pycache__
+**.pyc
+
+# Other build artifacts
 tags
 tags.lock
 tags.temp
+.idea

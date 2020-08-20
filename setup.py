@@ -29,7 +29,7 @@ setup_args = dict(
     maintainer=AUTHOR,
     maintainer_email=EMAIL,
     # url=URL,
-    packages=find_packages(where="flask_intro"),
+    packages=find_packages(where=".", exclude="tests"),
     # tests_require=EXTRAS['test'],
     platforms="any",
     # install_requires=REQUIRED,
