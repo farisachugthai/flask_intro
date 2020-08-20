@@ -84,8 +84,17 @@ def register_commands(app):
     app.cli.add_command(commands.lint)
 
 
-def configure_logger(app):
-    """Configure loggers."""
+def configure_logger(app, level=30):
+    """Configure loggers. Added filtering and a level.
+
+    Parameters
+    ----------
+    level : int, optional
+
+    """
     handler = logging.StreamHandler(sys.stdout)
+    handler.setLevel(level)
+    filterer = logging.Filter(name=__name__)
+    handler.addFilter(filterer)
     if not app.logger.handlers:
         app.logger.addHandler(handler)

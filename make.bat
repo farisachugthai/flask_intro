@@ -25,3 +25,5 @@ call conda.bat activate flask
 :: install with yarn
 :: alternatively flask run but we want webpack to build stuff too
 yarn start
+
+:: Vim: set ff=dos:
