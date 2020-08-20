@@ -36,11 +36,18 @@ docker-compose run --rm manage db migrate
 docker-compose run --rm manage db upgrade
 ```
 
-A docker volume `node-modules` is created to store NPM packages and is reused across the dev and prod versions of the application. For the purposes of DB testing with `sqlite`, the file `dev.db` is mounted to all containers. This volume mount should be removed from `docker-compose.yml` if a production DB server is used.
+### Docker Layout
 
-### Running locally
+A docker volume `node-modules` is created to store NPM packages and is reused
+across the dev and prod versions of the application. For the purposes of DB
+testing with `sqlite`, the file `dev.db` is mounted to all containers. This
+volume mount should be removed from `docker-compose.yml` if a production DB
+server is used.
 
-Run the following commands to bootstrap your environment if you are unable to run the application using Docker
+## Running locally
+
+Run the following commands to bootstrap your environment if you are unable to
+run the application using Docker
 
 ```bash
 cd flask_intro
@@ -51,7 +58,7 @@ npm start  # run the webpack dev server and flask server using concurrently
 
 You will see a pretty welcome screen.
 
-#### Database Initialization (locally)
+### Local Database Initialization
 
 Once you have installed your DBMS, run the following to create your app's
 database tables and perform the initial migration
@@ -93,6 +100,8 @@ To open the interactive shell, run
 
 ```bash
 docker-compose run --rm manage db shell
+
+# Or
 flask shell # If running locally without Docker
 ```
 
@@ -104,6 +113,8 @@ To run all tests, run
 
 ```bash
 docker-compose run --rm manage test
+
+# Or
 flask test # If running locally without Docker
 ```
 
