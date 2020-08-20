@@ -19,6 +19,8 @@ COPY requirements requirements
 COPY . .
 
 RUN useradd -m sid
+# So the docker build keeps dying right here. honestly the permissions are fucking fine.
+# fuck me no they were not
 RUN chown -R sid:sid /app
 USER sid
 ENV PATH="/home/sid/.local/bin:${PATH}"

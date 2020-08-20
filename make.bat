@@ -1,11 +1,12 @@
 :: make.bat
 
-:: @ECHO OFF
+@ECHO OFF
 
 pushd %~dp0
 
 :: Set up the env vars. From .env.example
-set FLASK_APP=autoapp.py
+:: set FLASK_APP=autoapp.py
+:: Commented the above out because I wanted to move it to the standard app.py
 set FLASK_DEBUG=1
 set FLASK_ENV=development
 set DATABASE_URL=sqlite:////tmp/dev.db
@@ -25,5 +26,3 @@ call conda.bat activate flask
 :: install with yarn
 :: alternatively flask run but we want webpack to build stuff too
 yarn start
-
-:: Vim: set ff=dos:
