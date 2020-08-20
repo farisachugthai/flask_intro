@@ -9,7 +9,7 @@ pushd %~dp0
 :: Commented the above out because I wanted to move it to the standard app.py
 set FLASK_DEBUG=1
 set FLASK_ENV=development
-set DATABASE_URL=sqlite:////tmp/dev.db
+set DATABASE_URL=sqlite:///./dev.db
 set GUNICORN_WORKERS=1
 set LOG_LEVEL=debug
 set SECRET_KEY=not-so-secret
@@ -23,6 +23,18 @@ if "%CONDA_EXE%" == "" (
 )
 call conda.bat activate flask
 
-:: install with yarn
-:: alternatively flask run but we want webpack to build stuff too
+:: check that this worked
+echo "Your python environment is: "
+echo %conda_prefix%
+
+:: So if they give the parameter "env" only activate stuff but don't start it
+:: similar to pipenv shell
+if "%1" == "env" goto end
+
+:: otherwise use the package.json start script to initialize the server.
+:: note: this needs to be installed with `yarn install` beforehand
+:: alternatively `flask run` would work here; however, we want webpack to build stuff too
 yarn start
+
+:end
+popd
