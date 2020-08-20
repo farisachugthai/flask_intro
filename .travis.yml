@@ -6,7 +6,9 @@ python:
   - 3.7
   - 3.8
 install:
-  - pip install -r requirements/dev.txt
+  - python setup.py build
+  - python -m pip install -r requirements/dev.txt
+  - python -m pip install -U -e .
   - nvm install 12
   - nvm use 12
   - npm install
